@@ -1,0 +1,160 @@
+/*
+ * Santz
+ *
+ * Benavidez, Buenos Aires, Argentina
+ * Copyright 2015, Santz Design
+ *
+ * http://santz.co
+ * santiago@santz.co
+ */
+
+/*
+ * Bourbon
+ */
+
+  @import "bourbon/bourbon";
+
+/*
+ * Box Sizing
+ */
+
+  *, *:after, *:before {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    @include box-sizing(border-box);
+  }
+
+/*
+ * Normalize
+ */
+
+  @import "modules/normalize";
+
+/*
+ * Variables
+ */
+
+  $black:                   #0a0c0e;
+  $gray:                    #c4c4c5;
+  $lightgray:               #e5e5e5;
+  $superlightgray:          #f8f8f8;
+  $blue:                    #6188ff;
+  $purple:                  #c25cff;
+  $pink:                    #ff769d;
+  $dribbble:                #ff71a8;
+  $actuame:                 #6160fb;
+  $aerolab:                 #ff7b00;
+  $owls:                    #1fcf72;
+  $hv:                      #0090ff;
+  $funtime:                 #d23156;
+  $huertabox:               #39b56b;
+  $devito:                  #7155b7;
+  $mazda:                   #0080c5;
+  $lautraman:               #002036;
+  $job:                     #1f8eff;
+
+  $textColor:               $black;
+  $linkColor:               $textColor;
+  // $highlights:           #ffaf50;
+  $highlight:               #ffac66;
+  // $highlightsAlt:        #ff507d;
+  $highlightAlt:            #ff6c85;
+  $fontSize:                14px;
+  $lineHeight:              1.5;
+  $sansSerifFontFamily:     'Dosis', sans-serif;
+  $serifFontFamily:         'Merriweather', serif;
+
+  $ultrabold:               900;
+  $bold:                    700;
+  $medium:                  500;
+  $normal:                  400;
+  $light:                   300;
+  $extraLight:              200;
+
+  $bodyBg:                  #fff;
+  $selectionBg:             $black;
+  $selectionColor:          #fff;
+
+  $transitionsTiming:       0.3s;
+
+  $cursorDisabled:          not-allowed;
+
+/*
+ * Main
+ */
+
+  body {
+    font: $normal $fontSize $serifFontFamily;
+    line-height: $lineHeight;
+    letter-spacing: 0.030em;
+    color: $textColor;
+    background: $bodyBg;
+    min-width: 320px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  ::-moz-selection {
+    background: $selectionBg;
+    color: $selectionColor;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $selectionBg;
+    color: $selectionColor;
+    text-shadow: none;
+  }
+
+/*
+ * Plugins
+ */
+
+  @import "plugins/glide.js";
+
+/*
+ * Modules
+ */
+
+  @import "modules/fonts";
+
+  @import "modules/assets";
+
+  @import "modules/grid";
+
+  @import "modules/type";
+
+  @import "modules/buttons";
+
+  @import "modules/forms";
+
+  @import "modules/sprite";
+
+/*
+ * Specifics
+ */
+
+  @import "parts/loader";
+
+  @import "parts/header";
+
+  @import "parts/footer";
+
+  @import "parts/home";
+
+  @import "parts/about";
+
+  @import "parts/blog";
+
+  @import "parts/errors";
+
+/*
+ * Media
+ */
+
+  @import "modules/media";
+
+  @import "modules/retina";

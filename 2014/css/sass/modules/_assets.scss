@@ -1,0 +1,56 @@
+.colorize { @include animation(colorize 40s ease infinite); }
+
+@include keyframes(colorize) {
+  0% { color: #5782ff; }
+
+  18% { color: #b257ff; }
+
+  51% { color: #ff5777; }
+
+  85%, 100% { color: #5782ff; }
+}
+
+.loading {
+  .loading-inner {
+    width: 36px;
+    margin: 0 auto;
+  }
+
+  .ball-first,
+  .ball-second,
+  .ball-third {
+    @include size(6px);
+    float: left;
+    margin: 0 3px;
+
+    background: $santz;
+    border-radius: 50%;
+
+    @include animation(bounce 1s infinite ease);
+
+    @include animation-fill-mode(both);
+  }
+
+  .ball-first { @include animation-delay(-0.16s); }
+  .ball-second { @include animation-delay(-0.08s); }
+}
+
+@include keyframes(bounce) {
+  0%, 30%, 100% { @include transform(scale(0.0)); }
+
+  15% { @include transform(scale(1.0)); }
+}
+
+.avatar {
+  display: block;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &.avatar-50px { @include size(50px); }
+
+  &.avatar-68px { @include size(68px); }
+
+  &.avatar-rounded { border-radius: 50%; }
+}

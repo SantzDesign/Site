@@ -1,0 +1,132 @@
+body, .body, .container {
+  position: relative;
+  height: 100vh;
+  min-height: 660px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 192px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.float {
+  position: absolute;
+  top: 7px;
+}
+
+.logo { margin: 0 0 6px -1px; }
+
+.intro {
+  color: $gray;
+
+  p { margin: 0; }
+}
+
+.about {
+  float: right;
+  max-width: 360px;
+}
+
+.lead {
+  font-size: 19px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.job {
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    height: 5px;
+    background: $yellow;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 2px;
+    z-index: -1;
+  }
+}
+
+.lists {
+  position: relative;
+  margin: 0 -20px;
+  color: $gray;
+
+  @include clearfix();
+
+  h4 { margin-bottom: 11px; }
+
+  p {
+    margin-bottom: 2px;
+
+    &:last-child { margin: 0; }
+  }
+
+  a { color: $gray; }
+}
+
+.services, .contact {
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+}
+
+.footer {
+  @include position(absolute, null 0 0);
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.since {
+  float: left;
+  padding: 50px 0 0;
+  font-size: 13px;
+  color: $lightgray;
+}
+
+.social {
+  float: right;
+  width: 360px;
+  height: 120px;
+  padding-top: 38px;
+  background: $yellow;
+  text-align: center;
+}
+
+.social-inner {
+  display: inline-block;
+}
+
+.socialink {
+  float: left;
+  margin: 0 14px;
+
+  > span {
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+.socialicon {
+  display: block;
+  width: 44px;
+  height: 44px;
+  transition: transform 0.3s ease;
+}
+
+.twitter { background-image: url(../images/twitter.svg); }
+.instagram { background-image: url(../images/instagram.svg); }
+.toptal { background-image: url(../images/toptal.svg); }
+.dribbble { background-image: url(../images/dribbble.svg); }
+
+.footer-logo { display: none; }

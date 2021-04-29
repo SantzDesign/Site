@@ -1,0 +1,193 @@
+.sprite {
+  display: block;
+
+  background: url(../images/sprite.png) no-repeat;
+  background-size: 280px 240px;
+}
+
+.spr-xs-arrow-up {
+  @include size(9px);
+  background-position: -12px 0;
+}
+
+.spr-xs-arrow-down {
+  @include size(9px);
+  background-position: 0 0;
+}
+
+.spr-xs-arrow-left-w {
+  @include size(9px);
+  background-position: -184px 0;
+}
+
+.spr-n-arrow-download {
+  @include size(11px);
+  background-position: -24px 0;
+}
+
+.spr-browser-back-button {
+  @include size(8px 11px);
+  background-position: -38px 0;
+}
+
+.spr-browser-forward-button {
+  @include size(8px 11px);
+  background-position: -48px 0;
+}
+
+.spr-n-arrow-right-actuame {
+  @include size(12px 11px);
+  background-position: -58px 0;
+}
+
+.spr-n-arrow-right-aerolab {
+  @include size(12px 11px);
+  background-position: -72px 0;
+}
+
+.spr-n-arrow-right-hv {
+  @include size(12px 11px);
+  background-position: -86px 0;
+}
+
+.spr-n-arrow-right-funtime {
+  @include size(12px 11px);
+  background-position: -100px 0;
+}
+
+.spr-n-arrow-right-huertabox {
+  @include size(12px 11px);
+  background-position: -114px 0;
+}
+
+.spr-n-arrow-right-devito {
+  @include size(12px 11px);
+  background-position: -128px 0;
+}
+
+.spr-n-arrow-right-mazda {
+  @include size(12px 11px);
+  background-position: -142px 0;
+}
+
+.spr-n-arrow-right-lautraman {
+  @include size(12px 11px);
+  background-position: -156px 0;
+}
+
+.spr-n-arrow-right-owls {
+  @include size(12px 11px);
+  background-position: -170px 0;
+}
+
+.spr-signature {
+  @include size(114px 78px);
+  background-position: 0 -14px;
+}
+
+.spr-n-social-dribbble {
+  @include size(36px);
+  background-position: 0 -94px;
+}
+
+.spr-n-social-twitter {
+  @include size(36px);
+  background-position: -38px -94px;
+}
+
+.spr-n-social-facebook {
+  @include size(36px);
+  background-position: -76px -94px;
+}
+
+.spr-l-slider-prev {
+  @include size(32px 60px);
+  background-position: -116px -14px;
+}
+
+.spr-l-slider-next {
+  @include size(32px 60px);
+  background-position: -150px -14px;
+}
+
+
+
+
+
+
+.logo {
+  display: block;
+
+  background: url(../images/logos.png) no-repeat;
+  background-size: 280px 512px;
+}
+
+.logo-dk-actuame {
+  @include size(170px 24px);
+  background-position: 0 0;
+}
+
+.logo-dk-owls {
+  @include size(130px 86px);
+  background-position: 0 -26px;
+}
+
+.logo-dk-hv {
+  @include size(228px 36px);
+  background-position: 0 -128px;
+}
+
+.logo-dk-funtime {
+  @include size(116px 110px);
+  background-position: 0 -166px;
+}
+
+.logo-dk-lautraman {
+  @include size(116px 110px);
+  background-position: -118px -166px;
+}
+
+.logo-dk-mazda {
+  @include size(116px 110px);
+  background-position: 0 -278px;
+}
+
+.logo-dk-devito {
+  @include size(116px 110px);
+  background-position: -118px -278px;
+}
+
+.logo-dk-huertabox {
+  @include size(116px 110px);
+  background-position: 0 -390px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

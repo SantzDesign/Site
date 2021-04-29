@@ -1,0 +1,377 @@
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  // margin-bottom: $line-height-computed;
+  // font-size: ($font-size-base * 1.5);
+  line-height: inherit;
+  // color: $legend-color;
+  border: 0;
+  // border-bottom: 1px solid $legend-border-color;
+}
+
+label {
+  display: inline-block;
+  max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+// Override content-box in Normalize (* isn't specific enough)
+input[type="search"] { @include box-sizing(border-box); }
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9; // IE8-9
+  line-height: normal;
+}
+
+input[type="file"] { display: block; }
+
+input[type="range"] {
+  display: block;
+  width: 100%;
+}
+
+select[multiple],
+select[size] { height: auto; }
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus { }
+
+output {
+  display: block;
+  // padding-top: ($padding-base-vertical + 1);
+  // font-size: $font-size-base;
+  // line-height: $line-height-base;
+  // color: $input-color;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  // height: ; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: 10px 14px;
+  font-size: $font-size;
+  // line-height: $line-height;
+  letter-spacing: 0.120em;
+  color: $santz;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 3px;
+
+  @include transition(color ease $transitions-timing , border-color ease $transitions-timing);
+
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    // background-color: $input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  }
+
+  &:focus { color: $blue; }
+
+  &[disabled],
+  fieldset[disabled] & { cursor: $cursor-disabled; }
+}
+
+textarea.form-control { height: auto; }
+
+::-webkit-input-placeholder {
+  color: $santz;
+  transition: color 0.2s ease;
+  will-change: color;
+}
+:-moz-placeholder {
+  color: $santz;
+  transition: color 0.2s ease;
+  will-change: color;
+}
+::-moz-placeholder {
+  color: $santz;
+  transition: color 0.2s ease;
+  will-change: color;
+}
+:-ms-input-placeholder {
+  color: $santz;
+  transition: color 0.2s ease;
+  will-change: color;
+}
+
+:focus:-ms-input-placeholder { color: $santzO35; }
+:focus::-moz-placeholder { color: $santzO35; }
+:focus:-moz-placeholder { color: $santzO35; }
+:focus::-webkit-input-placeholder { color: $santzO35; }
+
+.is-invalid {
+  color: $carmine;
+
+  &:focus { color: $carmine; }
+
+  &::-webkit-input-placeholder { color: $carmine; }
+  &:-moz-placeholder { color: $carmine; }
+  &::-moz-placeholder { color: $carmine; }
+  &:-ms-input-placeholder { color: $carmine; }
+
+  &:focus:-ms-input-placeholder { color: lighten($carmine, 25%); }
+  &:focus::-moz-placeholder { color: lighten($carmine, 25%); }
+  &:focus:-moz-placeholder { color: lighten($carmine, 25%); }
+  &:focus::-webkit-input-placeholder { color: lighten($carmine, 25%); }
+}
+
+// Search inputs in iOS
+//
+// This overrides the extra rounded corners on search inputs in iOS so that our
+// `.form-control` class can properly style them. Note that this cannot simply
+// be added to `.form-control` as it's not specific enough. For details, see
+// https://github.com/twbs/bootstrap/issues/11586.
+
+input[type="search"] { -webkit-appearance: none; }
+
+// Special styles for iOS temporal inputs
+//
+// In Mobile Safari, setting `display: block` on temporal inputs causes the
+// text within the input to become vertically misaligned. As a workaround, we
+// set a pixel line-height that matches the given height of the input, but only
+// for Safari. See https://bugs.webkit.org/show_bug.cgi?id=139848
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] { line-height: $line-height; }
+}
+
+.form-group { margin: 0; }
+
+.radio,
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  label {
+    // min-height: $line-height-computed; // Ensure the input doesn't jump when there is no text
+    padding-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"] {
+  position: absolute;
+  margin-left: -20px;
+  margin-top: 4px \9;
+}
+
+.radio + .radio,
+.checkbox + .checkbox { margin-top: -5px; }
+
+.radio-inline,
+.checkbox-inline {
+  position: relative;
+  display: inline-block;
+  padding-left: 20px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+  margin-top: 0;
+  margin-left: 10px; // space out consecutive inline controls
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & { cursor: $cursor-disabled; }
+}
+
+.radio-inline,
+.checkbox-inline {
+  &.disabled,
+  fieldset[disabled] & { cursor: $cursor-disabled; }
+}
+
+.radio,
+.checkbox {
+  &.disabled,
+  fieldset[disabled] & {
+    label { cursor: $cursor-disabled; }
+  }
+}
+
+/*
+ *
+ */
+
+  .contact-form {
+    .form-control {
+      border: 0;
+      outline: 0;
+      padding: 0;
+    }
+
+    textarea.form-control {
+      height: 120px;
+      line-height: 1.75;
+      resize: none;
+    }
+
+    .form-group {
+      label, .form-control {
+        @include transition(opacity 0.3s ease);
+
+        will-change: opacity;
+      }
+    }
+
+    &.is-sending {
+      .form-group {
+        label, .form-control { opacity: 0.3; }
+      }
+    }
+  }
+
+  .form-head {
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid $lightgray;
+    padding: 21px 25px 20px;
+
+    text-align: center;
+
+    &:before {
+      content: "";
+      display: block;
+      @include size(9px);
+      border: 1px solid $lightgray;
+      background: #fff;
+
+      @include position(absolute, 0 0 null);
+      z-index: 1;
+      margin: -5px auto 0;
+
+      @include transform(rotate(45deg));
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      @include size(18px 9px);
+      background: #fff;
+
+      @include position(absolute, 0 0 null);
+      z-index: 2;
+      margin: -10px auto 0;
+    }
+  }
+
+  .form-foot {
+    position: relative;
+    padding: 0 25px 25px;
+
+    .btn-circle {
+      float: right;
+      background: #fff;
+
+      // This is for contact loading
+
+      .loading {
+        @include position(absolute, 50% 0 null);
+        margin: -3px 0 0;
+
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .spr-tick-fff {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .spr-tick-fff,
+      .spr-arrow-right-000,
+      .loading { @include transition(visibility 0.3s ease, opacity 0.3s ease); }
+
+      &.is-loading {
+        .spr-arrow-right-000 {
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .loading {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        &.is-done {
+          background: #39cfa3;
+          border-color: #2d856b;
+
+          .loading {
+            visibility: hidden;
+            opacity: 0;
+          }
+
+          .spr-tick-fff {
+            visibility: visible;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .form-group {
+    position: relative;
+    padding: 13px 25px 15px;
+    border-top: 1px solid $lightgray;
+
+    label {
+      margin: 0 0 10px;
+
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: $extrabold;
+      color: $santzO35;
+
+      &.is-invalid { color: $carmine; }
+    }
+  }
+
+  .form-row-2cols {
+    .form-group {
+      float: left;
+      width: 50%;
+
+      &:first-child { border-right: 1px solid $lightgray; }
+    }
+  }
+
+  .modal {
+    .form-foot {
+      padding: 0 25px;
+
+      .btn-circle { margin: 0 0 -30px; }
+    }
+  }

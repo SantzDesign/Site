@@ -1,0 +1,270 @@
+// Gradient
+
+.gradient {
+  background: -webkit-linear-gradient(left, $highlight, $highlightAlt);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight { color: $highlight; }
+
+@include keyframes(colorize) {
+  /*
+  0%, 100% { color: #f1596e; }
+  10% { color: #ff6caa; }
+  20% { color: #bb6de0; }
+  30% { color: #986ce8; }
+  40% { color: #6e85e9; }
+  50% { color: #52d8ff; }
+  60% { color: #57efc6; }
+  70% { color: #fbff85; }
+  80% { color: #ffb975; }
+  90% { color: #ff8076; }
+  */
+
+  0%, 100% { color: $purple; }
+  33.3% { color: #ff769d; }
+  66.6% { color: $blue; }
+}
+
+@include keyframes(colorizeTheShadow) {
+  /*
+  0%, 100% { color: #f1596e; }
+  10% { color: #ff6caa; }
+  20% { color: #bb6de0; }
+  30% { color: #986ce8; }
+  40% { color: #6e85e9; }
+  50% { color: #52d8ff; }
+  60% { color: #57efc6; }
+  70% { color: #fbff85; }
+  80% { color: #ffb975; }
+  90% { color: #ff8076; }
+  */
+
+  0%, 100% { box-shadow: inset 0 -1px $purple; }
+  33.3% { box-shadow: inset 0 -1px #ff769d; }
+  66.6% { box-shadow: inset 0 -1px $blue; }
+}
+
+// Divider
+
+  .divider {
+    border: 0 none;
+    @include size(190px 2px);
+    background: $superlightgray;
+    margin: 0 auto;
+  }
+
+// 14px arrowed links
+
+  .link-14px-arrowed {
+    position: relative;
+
+    font-size: 14px;
+    line-height: 1;
+    font-weight: $bold;
+
+    padding: 0 0 0 22px;
+
+    .link-arrow {
+      @include position(absolute, 0 null null -1px);
+    }
+  }
+
+  .case-study-display-comingsoon {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: $bold;
+  }
+
+// Hashtags
+
+  .hashtag {
+    font: $bold 12px $sansSerifFontFamily;
+    color: $gray;
+    text-transform: uppercase;
+  }
+
+// iPhone
+
+  .iphone {
+    position: relative;
+    @include size(188px 390px);
+
+    border-radius: 29px;
+    border: 1px solid $lightgray;
+
+    @include user-select(none);
+
+    .power-btn {
+      @include position(absolute, -2px 35px null null);
+      @include size(24px 1px);
+      background: $lightgray;
+    }
+
+    .camera {
+      @include position(absolute, 15px 0 null);
+      margin: 0 auto;
+
+      border: 1px solid $lightgray;
+      @include size(6px);
+      border-radius: 50%;
+    }
+
+    .speaker {
+      @include position(absolute, 30px 0 null);
+      margin: 0 auto;
+
+      border: 1px solid $lightgray;
+      @include size(34px 5px);
+      border-radius: 3px;
+    }
+
+    .silent-switch {
+      @include position(absolute, 54px null null -2px);
+      @include size(1px 18px);
+      background: $lightgray;
+    }
+
+    .volume-up-btn {
+      @include position(absolute, 90px null null -2px);
+      @include size(1px 14px);
+      background: $lightgray;
+    }
+
+    .volume-down-btn {
+      @include position(absolute, 114px null null -2px);
+      @include size(1px 14px);
+      background: $lightgray;
+    }
+
+    .screen {
+      @include position(absolute, 54px 13px);
+      border: 1px solid $lightgray;
+    }
+
+    .home-btn {
+      @include position(absolute, null 0 10px);
+      margin: 0 auto;
+
+      border: 1px solid $lightgray;
+      @include size(34px);
+      border-radius: 50%;
+    }
+  }
+
+// Browser
+
+  .browser {
+    position: relative;
+    @include size(540px 360px);
+
+    border-radius: 5px;
+    border: 1px solid $lightgray;
+
+    overflow: hidden;
+
+    @include user-select(none);
+
+    .browser-head {
+      padding: 34px 12px 12px;
+      border-bottom: 1px solid $lightgray;
+    }
+
+    .close-btn {
+      @include position(absolute, 12px null null 12px);
+
+      @include size(10px);
+      border: 1px solid $lightgray;
+      border-radius: 50%;
+    }
+
+    .minimize-btn {
+      @include position(absolute, 12px null null 28px);
+
+      @include size(10px);
+      border: 1px solid $lightgray;
+      border-radius: 50%;
+    }
+
+    .maximize-btn {
+      @include position(absolute, 12px null null 44px);
+
+      @include size(10px);
+      border: 1px solid $lightgray;
+      border-radius: 50%;
+    }
+
+    .browser-toolbar {
+      position: relative;
+      padding: 0 0 0 67px;
+    }
+
+    .browser-nav {
+      @include position(absolute, 0 null null 0);
+
+      @include size(55px 23px);
+      border: 1px solid $lightgray;
+      border-radius: 3px;
+
+      &:before {
+        content: "";
+        @include position(absolute, 0);
+        margin: 0 auto;
+        width: 1px;
+        background: $lightgray;
+      }
+    }
+
+    .back-btn { @include position(absolute, 5px null null 9px); }
+
+    .forward-btn { @include position(absolute, 5px 9px null null); }
+
+    .address-bar {
+      height: 23px;
+      border: 1px solid $lightgray;
+      border-radius: 3px;
+    }
+
+    .viewport { @include position(absolute, 70px 0 0); }
+
+    .viewport-inner {
+      @include position(absolute, 0);
+      border-radius: 0 0 4px 4px;
+      background-clip: content-box;
+
+      .logo {
+        @include position(absolute, 50% 0 null);
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

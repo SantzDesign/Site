@@ -1,0 +1,651 @@
+.tiles {
+  position: relative;
+  z-index: 80;
+
+  [data-tile] .tile-image { @include transition(opacity 0.5s ease); }
+}
+
+$multiplier: 0.75;
+
+.tilecell-mazda [data-tile] .tile-image { @include transition-delay(0.15s * $multiplier); }
+.tilecell-123seguro [data-tile] .tile-image { @include transition-delay(0.3s * $multiplier); }
+.tilecell-absolutart [data-tile] .tile-image { @include transition-delay(0.45s * $multiplier); }
+.tilecell-lautraman [data-tile] .tile-image { @include transition-delay(0.6s * $multiplier); }
+.tilecell-mbvarq [data-tile] .tile-image { @include transition-delay(0.75s * $multiplier); }
+.tilecell-aerolab [data-tile] .tile-image { @include transition-delay(0.9s * $multiplier); }
+.tilecell-boilerplate [data-tile] .tile-image { @include transition-delay(1.05s * $multiplier); }
+.tilecell-ucda [data-tile] .tile-image { @include transition-delay(1.2s * $multiplier); }
+.tilecell-msac [data-tile] .tile-image { @include transition-delay(1.35s * $multiplier); }
+.tilecell-jar [data-tile] .tile-image { @include transition-delay(1.5s * $multiplier); }
+.tilecell-rate [data-tile] .tile-image { @include transition-delay(1.65s * $multiplier); }
+.tilecell-about [data-tile] .tile-image { @include transition-delay(1.8s * $multiplier); }
+.tilecell-social [data-tile] .tile-image { @include transition-delay(1.95s * $multiplier); }
+
+/*
+ * Variables & Global Tile Styles
+ */
+
+$tile-color-zindex: 2;
+$tile-image-zindex: 4;
+$tile-inner-inner-zindex: 5;
+$tile-content-zindex: 6;
+$tile-aerolab-zindex: 8;
+$tile-overlay-zindex: 10;
+
+$tile-default-content-top: 35px;
+$tile-default-content-right: 36px;
+$tile-default-content-bottom: 37px;
+$tile-default-content-left: 40px;
+
+$bg-mazda: #556b86;
+$bg-123seguro: $blue;
+$bg-absolutart: #e1675f;
+$bg-lautraman: #e8a97d;
+$bg-mbvarq: #1f1f1f;
+$bg-aerolab: $aerolab;
+$bg-boilerplate: $purple;
+$bg-ucda: #17558a;
+$bg-msac: #976b41;
+$bg-jar: #8f3f22;
+$bg-rate: $carmine;
+$bg-about: $whitesmoke;
+$bg-social: $santz;
+
+$fff25: rgba(255, 255, 255, 0.25);
+$fff30: rgba(255, 255, 255, 0.30);
+$fff35: rgba(255, 255, 255, 0.35);
+$fff40: rgba(255, 255, 255, 0.40);
+$fff45: rgba(255, 255, 255, 0.45);
+$fff50: rgba(255, 255, 255, 0.50);
+
+// Stacking order...
+
+  .tile-color { z-index: $tile-color-zindex; }
+  .tile-image { z-index: $tile-image-zindex; }
+  .aerolab,
+  .aerolab-unlabelled { z-index: $tile-aerolab-zindex; }
+  .tile-inner-inner { z-index: $tile-inner-inner-zindex; }
+  .tile-content { z-index: $tile-content-zindex; }
+  .tile-overlay { z-index: $tile-overlay-zindex; }
+
+// Common positioning
+
+  .tile-inner,
+  .tile-color,
+  .tile-overlay { @include position(absolute, 0); }
+
+  .tile-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    will-change: opacity;
+  }
+
+  .tile-overlay-button {
+    @include position(absolute, 50% 25px null);
+    text-align: center;
+    margin: -21px auto 0;
+  }
+
+  .tile-logo, .tile-icon, .tile-avatar {
+    @include position(absolute, 50% 0 0);
+    margin: 0 auto;
+  }
+
+// Common visibility and transitions
+
+  .tile-overlay {
+    opacity: 0;
+    visibility: hidden;
+
+    will-change: opacity, visibility;
+
+    @include transition(visibility 0.3s $cubic-bezier, opacity 0.3s $cubic-bezier);
+  }
+
+  .tile-content, .aerolab, .aerolab-unlabelled { @include transition(transform 0.3s $cubic-bezier, opacity 0.3s $cubic-bezier); }
+
+  .tile-default[data-overlay], .tile-dual[data-overlay] {
+    @include user-select(none);
+
+    &:hover { cursor: pointer; }
+
+    &.has-active-overlay {
+      &:hover { cursor: default; }
+
+      .tile-overlay {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .tile-content, .aerolab, .aerolab-unlabelled {
+        opacity: 0;
+
+        @include transform(scale(0.985));
+      }
+    }
+  }
+
+/*
+ * Tile, default
+ */
+
+  .tile-default {
+    @include position(absolute, 0);
+    z-index: 1;
+
+    // .tile-inner {}
+    // .tile-color {}
+
+    .tile-image { bottom: 0; }
+
+    .tile-content {
+      position: absolute;
+
+      // h2 {}
+
+      h4 { padding: 14px 2px 0 0; }
+    }
+
+    .tile-overlay { background: $overlay; }
+
+    // .tile-overlay-button {}
+  }
+
+/*
+ * Tile, dual
+ */
+
+  .tile-dual {
+    @include position(absolute, 0);
+    z-index: 1;
+
+    // .tile-inner {}
+
+    .tile-inner-inner {
+      @include position(absolute, 50% 0 0);
+
+      &:before {
+        content: "";
+        display: block;
+        height: 0;
+        width: 0;
+        border-style: solid;
+        border-color: transparent;
+        border-width: 15px;
+        position: absolute;
+        margin: 0 auto;
+
+        top: -29px;
+        left: 0;
+        right: 0;
+      }
+    }
+
+    // .tile-color {}
+
+    .tile-image { bottom: 50%; }
+
+    .tile-content {
+      @include position(absolute, 0);
+      padding: 0 $tile-default-content-right 0 $tile-default-content-left;
+      text-align: center;
+
+      // h2 {}
+
+      h4 { padding: 14px 2px 0 0; }
+    }
+
+    // .tile-overlay {}
+
+    // .tile-overlay-button {}
+  }
+
+/*
+ * Aerolab
+ */
+
+  .aerolab {
+    position: absolute;
+
+    span {
+      display: inline-block;
+      position: relative;
+
+      color: #fff;
+      font-size: 11px;
+
+      padding: 4px 0;
+
+      i {
+        position: absolute;
+        top: 0;
+      }
+    }
+  }
+
+  .aerolab-unlabelled {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 20px;
+    text-align: center;
+
+    span { display: inline-block; }
+  }
+
+/*
+ * Mazda
+ */
+
+  .tile-mazda {
+    .tile-color { background: $bg-mazda; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      top: $tile-default-content-top;
+      text-align: right;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff35; }
+    }
+
+    .aerolab {
+      left: 24px;
+      bottom: 23px;
+
+      span {
+        padding-left: 38px;
+
+        i { left: 0; }
+      }
+    }
+  }
+
+/*
+ * 123Seguro
+ */
+
+  .tile-123seguro {
+    .tile-color { background: $bg-123seguro; }
+
+    .tile-content {
+      h2 { color: #fff; }
+
+      h4 { color: $fff30; }
+    }
+
+    .tile-inner-inner:before { border-bottom-color: $bg-123seguro; }
+  }
+
+/*
+ * #AbsolutArt
+ */
+
+  .tile-absolutart {
+    .tile-color { background: $bg-absolutart; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+      text-align: right;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff35; }
+    }
+  }
+
+/*
+ * Lautraman
+ */
+
+  .tile-lautraman {
+    .tile-color { background: $bg-lautraman; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+      text-align: right;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff35; }
+    }
+  }
+
+/*
+ * MBVARQ
+ */
+
+  .tile-mbvarq {
+    .tile-color { background: $bg-mbvarq; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff25; }
+    }
+  }
+
+/*
+ * Aerolab
+ */
+
+  .tile-aerolab {
+    .tile-color { background: $bg-aerolab; }
+
+    .tile-logo { margin-top: -47px; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff30; }
+    }
+  }
+
+/*
+ * Santz Boilerplate
+ */
+
+  .tile-boilerplate {
+    .tile-color { background: $bg-boilerplate; }
+
+    .tile-image { background: $whitesmoke; }
+
+    .tile-icon { margin-top: -20px; }
+
+    .tile-content {
+      h2 { color: #fff; }
+
+      h4 { color: $fff30; }
+    }
+
+    .tile-inner-inner:before { border-bottom-color: $bg-boilerplate; }
+  }
+
+/*
+ * UCDA
+ */
+
+  .tile-ucda {
+    .tile-color { background: $bg-ucda; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff50; }
+    }
+  }
+
+/*
+ * MSAC
+ */
+
+  .tile-msac {
+    .tile-color { background: $bg-msac; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff40; }
+    }
+
+    .aerolab {
+      right: 25px;
+      top: 24px;
+
+      span {
+        padding-right: 36px;
+
+        i { right: 0; }
+      }
+    }
+  }
+
+/*
+ * J.A.R.
+ */
+
+  .tile-jar {
+    .tile-color { background: $bg-jar; }
+
+    .tile-content {
+      left: $tile-default-content-left;
+      right: $tile-default-content-right;
+      bottom: $tile-default-content-bottom;
+
+      h2 { color: #fff; }
+
+      h4 { color: $fff45; }
+    }
+  }
+
+/*
+ * Rate
+ */
+
+  .tile-rate {
+    @include position(absolute, 0);
+    z-index: 1;
+
+    text-align: center;
+
+    .tile-inner {}
+
+    .tile-color { background: $bg-rate; }
+
+    .tile-data-rate {
+      color: #fff;
+      font-size: 80px;
+      letter-spacing: 0;
+      font-weight: $extralight;
+
+      span { letter-spacing: 0.240em; }
+    }
+
+    .tile-content {
+      @include position(absolute, null $tile-default-content-right $tile-default-content-bottom $tile-default-content-left);
+
+      h4 { color: $fff35; }
+    }
+  }
+
+/*
+ * About
+ */
+
+  .tile-about {
+    @include position(absolute, 0);
+    z-index: 1;
+
+    text-align: center;
+
+    .tile-inner { display: block; }
+
+    .tile-color { background: $bg-about; }
+
+    .tile-avatar {
+      margin-top: -25px;
+
+      @include transition(transform 0.3s $cubic-bezier);
+    }
+
+    .tile-content {
+      @include position(absolute, null $tile-default-content-right $tile-default-content-bottom $tile-default-content-left);
+
+      h2 { color: $santz; }
+
+      h4 {
+        padding: 14px 2px 0 0;
+        color: transparentize($santz, 0.75);
+      }
+    }
+
+    &:hover, &:focus {
+      .tile-avatar { @include transform(translateY(-10px)); }
+    }
+  }
+
+/*
+ * Social
+ */
+
+  .tile-social {
+    @include position(absolute, 0);
+    z-index: 1;
+
+    text-align: center;
+
+    // .tile-inner {}
+
+    .tile-color { background: $bg-social; }
+
+    .valign-content {
+      a {
+        float: left;
+        font-size: 16px;
+        color: #fff;
+        padding: 8px;
+      }
+
+      &:hover {
+        a {
+          color: $fff30;
+
+          &:hover { color: #fff; }
+        }
+      }
+    }
+
+    .tile-content {
+      @include position(absolute, null $tile-default-content-right $tile-default-content-bottom $tile-default-content-left);
+
+      h4 { color: $fff30; }
+    }
+  }
+
+/*
+ * The dirty code...
+ */
+
+  $bg-black6: darken(white, 14%);
+  $bg-black5: darken(white, 13%);
+  $bg-black4: darken(white, 11.5%);
+  $bg-black3: darken(white, 10%);
+  $bg-black2: darken(white, 8%);
+
+  .tilerow-01 {
+    position: relative;
+    padding-left: 72%;
+
+    .tilecell-mazda {
+      @include position(absolute, 0 51% 0 0);
+      background: $bg-black3;
+    }
+
+    .tilecell-123seguro {
+      @include position(absolute, 0 28% 0 49%);
+      background: $bg-black2;
+    }
+
+    .tilecell-absolutart {
+      position: relative;
+      padding: 0 0 100%;
+      background: $bg-black3;
+    }
+  }
+
+  .tilerow-02 {
+    position: relative;
+    padding-left: 76.5%;
+
+    .tilecell-lautraman {
+      @include position(absolute, 0 63.4% 0 0);
+      background: $bg-black2;
+    }
+
+    .tilecell-mbvarq {
+      @include position(absolute, 0 23.5% 0 36.6%);
+      background: $bg-black4;
+    }
+
+    .tilecell-aerolab {
+      position: relative;
+      padding: 0 0 100%;
+      background: $bg-black2;
+    }
+  }
+
+  .tilerow-03 {
+    position: relative;
+    padding-left: 63.8%;
+
+    .tilecell-boilerplate {
+      @include position(absolute, 0 81.9% 0 0);
+      background: $bg-black4;
+    }
+
+    .tilecell-ucda {
+      @include position(absolute, 0 36.2% 0 18.1%);
+      background: $bg-black3;
+    }
+
+    .tilecell-msac {
+      position: relative;
+      padding: 0 0 100%;
+      background: $bg-black6;
+    }
+  }
+
+  .tilerow-04 {
+    position: relative;
+    padding-left: 80%;
+
+    .tilecell-jar {
+      @include position(absolute, 0 60% 0 0);
+      background: $bg-black5;
+    }
+
+    .tilecell-rate {
+      @include position(absolute, 0 40% 0 40%);
+      background: $bg-black4;
+    }
+
+    .tilecell-about {
+      @include position(absolute, 0 20% 0 60%);
+      background: $bg-black5;
+    }
+
+    .tilecell-social {
+      position: relative;
+      padding: 0 0 100%;
+      background: $bg-black4;
+    }
+  }

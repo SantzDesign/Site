@@ -1,0 +1,166 @@
+.header {
+  position: relative;
+  z-index: 10;
+  padding: 95px 100px 0;
+
+  &.is-white {
+    a { color: #fff; }
+  }
+}
+
+.back-to-home {
+  @include position(absolute, 98px 90px null null);
+
+  padding: 5px 11px;
+  font: $medium 12px $sansSerifFontFamily;
+}
+
+@media only screen and (max-width: 960px) {
+  .back-to-home {
+    right: 40px;
+    top: 48px;
+  }
+}
+
+@media only screen and (max-width: 739px) {
+  .back-to-home {
+    right: 20px;
+    top: 26px;
+  }
+}
+
+.santz {
+  position: relative;
+  z-index: 1;
+}
+
+.santz-job {
+  @include position(absolute, 50% null null 0);
+  margin: -8px 0 0 116px;
+  margin: -7.5px 0 0 116px;
+
+  font: $ultrabold 9px $serifFontFamily;
+  letter-spacing: 0.030em;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+
+  display: block;
+  background: $job;
+  border-radius: 3px;
+  padding: 5px 5px 3px 6px;
+  color: #fff;
+
+  &:before {
+    content: "";
+    @include position(absolute, 50% null null -2px);
+    margin: -2px 0 0;
+
+    display: block;
+    @include size(4px);
+    background: $job;
+
+    @include transform(rotate(45deg));
+  }
+}
+
+.menu {
+  @include position(absolute, 89px 90px null null);
+  z-index: 2;
+  // height: 43px;
+
+  &.is-active {
+    .menu-nav {
+      // display: block;
+      visibility: visible;
+
+      // @include transform(scale(1, 1));
+      // opacity: 1;
+    }
+
+    .menu-dash {
+      background: transparent;
+
+      &:before { @include transform(rotate(-45deg)); }
+
+      &:after { @include transform(rotate(45deg)); }
+    }
+  }
+}
+
+.menu-nav {
+  @include position(absolute, 43px 0 null null);
+  padding: 3px 0 0;
+
+  // display: none;
+  visibility: hidden;
+
+  // @include transform(scale(0.9, 1));
+
+  // @include transform-origin(100% 50%);
+
+  // opacity: 0;
+
+  // @include transition(opacity 0.2s ease);
+  // @include transition(transform 0.2s ease, opacity 0.2s ease);
+
+  > a {
+    float: right;
+    padding: 5px 11px;
+    font: $medium 12px $sansSerifFontFamily;
+    color: $black;
+    text-transform: lowercase;
+  }
+}
+
+.menu-button {
+  @include size(43px);
+  display: block;
+
+  @include position(absolute, 0 0 null null);
+}
+
+.menu-dash {
+  @include position(absolute, 50% 0 null);
+  display: block;
+  @include size(21px 1px);
+  background: $black;
+  margin: -1px auto 0;
+
+  // @include transition(background 0.2s ease);
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    @include position(absolute, 0);
+    background: $black;
+
+    // @include transition(transform 0.2s ease);
+  }
+
+  &:before { @include transform(translateY(-7px)); }
+
+  &:after { @include transform(translateY(7px)); }
+}
+
+@media only screen and (max-width: 960px) {
+  .header { padding: 45px 50px 0; }
+
+  .menu {
+    top: 39px;
+    right: 40px;
+  }
+}
+
+@media only screen and (max-width: 739px) {
+  .santz-job { margin-left: 104px; }
+
+  .header { padding: 25px 30px 0; }
+
+  .menu {
+    top: 16px;
+    right: 20px;
+  }
+
+  .menu-nav { width: 260px; }
+}

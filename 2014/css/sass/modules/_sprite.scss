@@ -1,0 +1,37 @@
+.sprite {
+  display: block;
+  // background: url(../images/sprite.png) no-repeat;
+
+  // SVG
+  background: url(../images/sprite.svg) no-repeat;
+  background-size: 300px 300px;
+}
+
+.spr-aerolab-xs { @include size(28px 20px); }
+
+.spr-aerolab-xl {
+  @include size(94px);
+  background-position: -42px 0;
+}
+
+.spr-boilerplate {
+  @include size(40px);
+  background-position: 0 -22px;
+}
+
+.spr-icon-18dp {
+  @include size(16px);
+
+  &.spr-arrow-right-fff { background-position: 0 -96px; }
+}
+
+.spr-icon-24dp {
+  @include size(24px);
+
+  &.spr-close-fff { background-position: 0 -114px; }
+  &.spr-arrow-left-000 { background-position: -26px -114px; }
+  &.spr-arrow-right-000 { background-position: -52px -114px; }
+  &.spr-location-fff { background-position: -78px -114px; }
+  &.spr-tiles-000 { background-position: -104px -114px; }
+  &.spr-tick-fff { background-position: -130px -114px; }
+}

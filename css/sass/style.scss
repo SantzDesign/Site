@@ -1,0 +1,129 @@
+/*
+ * Santz, by Santiago Baigorria
+ *
+ * Buenos Aires, Argentina
+ * Copyright 2019, Santz Co.
+ *
+ * https://santz.co
+ * santiago@toptal.com
+ */
+
+/*
+ * Bourbon
+ */
+
+  @import "bourbon/bourbon";
+
+/*
+ * Box Sizing
+ */
+
+  *, *:after, *:before {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
+    box-sizing: border-box;
+  }
+
+/*
+ * Normalize
+ */
+
+  @import "modules/normalize";
+
+/*
+ * Variables
+ */
+
+  $black:                   #0F1318;
+  $gray:                    #768090;
+  $lightgray:               #9EA5B1;
+  $yellow:                  #FFAE03;
+
+  $textColor:               $black;
+  $linkColor:               $black;
+  $fontSize:                16px;
+  $lineHeight:              1.6;
+  $sansSerif:               'Dosis', sans-serif;
+  $serif:                   'Times New Roman', serif;
+
+  $bold:                    700;
+  $normal:                  400;
+  $light:                   300;
+
+  $bodyBg:                  white;
+  $selectionBg:             $yellow;
+  $selectionColor:          $black;
+
+  $transitionsTiming:       0.3s;
+
+  $cursorDisabled:          not-allowed;
+
+/*
+ * Main
+ */
+
+  body {
+    font: $normal $fontSize $sansSerif;
+    line-height: $lineHeight;
+    color: $textColor;
+    background: $bodyBg;
+    min-width: 320px;
+    letter-spacing: 0.2px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: $linkColor;
+  }
+
+  ::-moz-selection {
+    background: $selectionBg;
+    color: $selectionColor;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $selectionBg;
+    color: $selectionColor;
+    text-shadow: none;
+  }
+
+/*
+ * Modules
+ */
+
+  @import "modules/fonts";
+
+  @import "modules/assets";
+
+  @import "modules/grid";
+
+  @import "modules/type";
+
+  @import "modules/buttons";
+
+  @import "modules/forms";
+
+  @import "modules/sprite";
+
+/*
+ * Specifics
+ */
+
+  @import "parts/all";
+
+/*
+ * Media
+ */
+
+  @import "modules/media";
+
+  @import "modules/retina";

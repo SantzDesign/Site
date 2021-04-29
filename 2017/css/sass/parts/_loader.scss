@@ -1,0 +1,84 @@
+.loading {
+  // display: none;
+  @include position(fixed, 0);
+  z-index: 2500;
+  background: #fff;
+
+  text-align: center;
+
+  will-change: opacity, visibility;
+
+  @include transition(opacity 0.3s ease, visibility 0.3s ease);
+
+  &.is-loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.loader {
+  @include position(absolute, 50% 0 null);
+  margin: -1px auto 0;
+  width: 210px;
+
+  p {
+    font: $medium 10px $sansSerifFontFamily;
+    letter-spacing: 0.240em;
+    text-transform: uppercase;
+
+     @include position(absolute, -40px 0 null);
+  }
+}
+
+.loader-bar {
+  position: relative;
+  height: 1px;
+  background: $lightgray;
+  overflow: hidden;
+}
+
+.loader-bar-progress {
+  background: $highlight;
+  @include position(absolute, 0);
+
+  // background: -moz-linear-gradient(left, #6188ff 0%, #c25cff 100%);
+  // background: -webkit-gradient(linear, left top, right top, color-stop(0%, #6188ff), color-stop(100%, #c25cff));
+  // background: -webkit-linear-gradient(left, #6188ff 0%, #c25cff 100%);
+  // background: -o-linear-gradient(left, #6188ff 0%, #c25cff 100%);
+  // background: -ms-linear-gradient(left, #6188ff 0%, #c25cff 100%);
+  // background: linear-gradient(to right, #6188ff 0%, #c25cff 100%);
+
+  background: -moz-linear-gradient(left, $highlightAlt 0%, $highlight 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $highlightAlt), color-stop(100%, $highlight));
+  background: -webkit-linear-gradient(left, $highlightAlt 0%, $highlight 100%);
+  background: -o-linear-gradient(left, $highlightAlt 0%, $highlight 100%);
+  background: -ms-linear-gradient(left, $highlightAlt 0%, $highlight 100%);
+  background: linear-gradient(to right, $highlightAlt 0%, $highlight 100%);
+
+  @include transform(translateX(-100%));
+
+  @include animation(loaderProgress 2.4s ease 0.3s);
+
+  @include animation-fill-mode(forwards);
+}
+
+.experience-notice {
+  display: none;
+  @include position(absolute, null 0 45px);
+  font-size: 10px;
+}
+
+@include keyframes(loaderProgress) {
+  0% { @include transform(translateX(-100%)); }
+  10% { @include transform(translateX(-85%)); }
+  40% { @include transform(translateX(-35%)); }
+  100% { @include transform(translateX(0%)); }
+}
+
+@media only screen and (max-width: 920px) {
+  .experience-notice { display: block; }
+}
+
+@media only screen and (max-width: 739px) {
+  .experience-notice { bottom: 25px; }
+}

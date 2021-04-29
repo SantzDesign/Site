@@ -1,0 +1,97 @@
+// Media Queries
+
+@media only screen and (min-height: 860px) {
+  .wrapper { top: 30%; }
+}
+
+@media only screen and (max-width: 768px) {
+  body, .body, .container {
+    height: auto;
+    min-height: auto;
+  }
+
+  .wrapper {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    max-width: 294px;
+    padding: 79px 0 0;
+  }
+
+  .float {
+    position: relative;
+    top: auto;
+  }
+
+  .dash {
+    width: 61px;
+    height: 4px;
+    background: $black;
+    margin: 33px 0 32px;
+  }
+
+  .about {
+    float: none;
+    max-width: none;
+  }
+
+  .lists { margin: 0 -10px; }
+
+  .services, .contact { padding: 0 10px; }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    padding: 0 0 52px;
+
+    text-align: center;
+  }
+
+  .since {
+    float: none;
+    padding: 55px 0 9px;
+  }
+
+  .social {
+    float: none;
+    width: 100%;
+    margin-top: 73px;
+  }
+
+  .footer-logo { display: inline-block; }
+}
+
+@media only screen and (min-width: 769px) {
+  .socialink {
+    position: relative;
+
+    > span {
+      position: absolute;
+      bottom: -11px;
+      left: -12px;
+      width: 68px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(3px);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      color: $black;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    &:hover, &:focus {
+      .socialicon {
+        transform: translateY(-6px);
+      }
+
+      > span {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

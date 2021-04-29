@@ -1,0 +1,185 @@
+/*
+ * Santz.co, made by Santiago Baigorria
+ *
+ * Benavidez, Buenos Aires, Argentina
+ * Copyright 2015, Santz Design
+ *
+ * https://santz.co
+ * santiago@santz.co
+ */
+
+/*
+ * Bourbon
+ */
+
+  @import "bourbon/bourbon";
+
+/*
+ * Universal
+ */
+
+  *, *:after, *:before { box-sizing: border-box; }
+
+  * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+/*
+ * Normalize
+ */
+
+  @import "modules/normalize";
+
+/*
+ * Variables
+ */
+
+  $santz:                   #0a0c0e;
+  $aerolab:                 #ff7b00;
+
+  $santzO35:                #b5b6b6;
+  $santzO20:                #cececf;
+
+  $whitesmoke:              #f5f5f5;
+  $lightgray:               #dadbdb;
+
+  $blue:                    #314eff;
+  $purple:                  #631bce;
+  $carmine:                 #ff4956;
+  $violet:                  #864bff;
+
+  $overlay:                 rgba(6, 8, 10, 0.8);
+
+  $text-color:              #535456;
+  $link-color:              $santz;
+  $font-size:               16px;
+  $line-height:             1.2;
+  $sans-serif-font-family:  'Dosis', sans-serif;
+  $serif-font-family:       'Times New Roman', serif;
+
+  $extralight:              200;
+  $regular:                 400;
+  $semibold:                600;
+  $extrabold:               800;
+
+  $body-bg:                 $whitesmoke;
+  $selection-bg:            $purple;
+  $selection-color:         #fff;
+
+  $transitions-timing:      0.3s;
+  $cubic-bezier:            cubic-bezier(0.77, 0, 0.175, 1);
+
+  $cursor-disabled:         not-allowed;
+
+  $tile-contents-translate: 4px;
+
+/*
+ * Main
+ */
+
+  html, body { height: 100%; }
+
+  body { overflow-x: hidden; }
+
+  .pjaxable {
+    height: 100%;
+    padding: 68px 0 0;
+    position: relative;
+  }
+
+  .content {
+    // @include position(absolute, 68px 0 0);
+    // z-index: 60;
+    // overflow-x: hidden;
+    // overflow-y: auto;
+
+    // -webkit-overflow-scrolling: touch;
+
+    top: 0;
+    @include size(100%);
+  }
+
+  .content-inner {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    font: $regular $font-size $sans-serif-font-family;
+    line-height: $line-height;
+    letter-spacing: 0.120em;
+    color: $text-color;
+    background: $body-bg;
+    min-width: 320px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    color: $link-color;
+    outline: none;
+
+    @include transition(color $transitions-timing $cubic-bezier, background-color $transitions-timing $cubic-bezier, border-color $transitions-timing $cubic-bezier, opacity $transitions-timing $cubic-bezier, visibility $transitions-timing $cubic-bezier, transform $transitions-timing $cubic-bezier);
+  }
+
+  ::-moz-selection {
+    background: $selection-bg;
+    color: $selection-color;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $selection-bg;
+    color: $selection-color;
+    text-shadow: none;
+  }
+
+/*
+ * Plugins
+ */
+
+  @import "plugins/nprogress.js";
+
+  @import "plugins/modals.js";
+
+/*
+ * Modules
+ */
+
+  @import "modules/fonts";
+
+  @import "modules/assets";
+
+  @import "modules/grid";
+
+  @import "modules/type";
+
+  @import "modules/buttons";
+
+  @import "modules/forms";
+
+  @import "modules/sprite";
+
+/*
+ * Specifics
+ */
+
+  @import "parts/header";
+
+  @import "parts/footer";
+
+  @import "parts/home";
+
+  @import "parts/about";
+
+  @import "parts/blog";
+
+/*
+ * Media
+ */
+
+  @import "modules/media";
+
+  @import "modules/retina";

@@ -1,0 +1,80 @@
+.logo {
+  float: left;
+
+  a {
+    display: block;
+    padding: 0 25px;
+    height: 68px;
+    line-height: 68px;
+  }
+}
+
+.header {
+  @include position(fixed, 0 null null);
+  width: 100%;
+  min-width: 320px;
+  z-index: 230;
+
+  background: $santz;
+
+  @include transform(translateZ(0));
+
+  a { color: #fff; }
+
+  .clearfix {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &.is-default .clearfix { max-width: 680px; }
+  &.is-home .clearfix { /* max-width: none; */ }
+}
+
+.main-navigation {
+  float: right;
+
+  a {
+    float: left;
+    font-size: 14px;
+    padding: 0 16px;
+    height: 68px;
+    line-height: 68px;
+    text-transform: uppercase;
+  }
+
+  .get-in-touch {
+    color: $violet;
+    float: left;
+    height: 68px;
+    padding: 26px 24px 0 16px;
+
+    font-weight: $extrabold;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    cursor: pointer;
+  }
+}
+
+.mobile-navigation-btn { display: none; }
+
+@media only screen and (max-width: 519px) {
+  .main-navigation { display: none; }
+
+  .mobile-navigation-btn {
+    display: block;
+    float: right;
+  }
+
+  .mobile-nav-open {
+    .mobile-navigation-btn {
+      .dash-main {
+        @include transform(scale(0, 1));
+        opacity: 0;
+      }
+
+      .dash-above { @include transform(rotate(45deg)); }
+      .dash-below { @include transform(rotate(-45deg)); }
+    }
+  }
+}

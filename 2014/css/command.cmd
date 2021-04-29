@@ -1,0 +1,1 @@
+sass --watch sass/santz.scss:santz.css

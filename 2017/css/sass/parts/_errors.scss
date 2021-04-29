@@ -1,0 +1,178 @@
+.error-page {
+  position: relative;
+  height: 100vh;
+  min-height: 680px;
+}
+
+.error-page-inner { @include position(absolute, 0); }
+
+.error-bg {
+  @include position(absolute, 30px);
+  z-index: 1;
+  border-radius: 3px;
+}
+
+.error-notice {
+  @include position(absolute, 50% 0 null);
+  // overflow-x: hidden;
+  margin: -57px 0 0;
+}
+
+.error-notice-inner {
+  position: relative;
+  z-index: 15;
+
+  margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+  padding: 0 30px;
+
+  text-align: center;
+  color: #fff;
+}
+
+.error-code {
+  text-transform: uppercase;
+  margin: 0 0 38px;
+}
+
+.error-caption {}
+
+.back-button {
+  display: block;
+
+  @include position(absolute, null 0 80px);
+  margin: 0 auto;
+  z-index: 10;
+
+  // @include position(absolute, 0 0 null);
+  // margin: -8px auto 0;
+
+  @include size(31px);
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.back-button-arrow {
+  @include position(absolute, 50% 0 null);
+  margin: -5px auto 0;
+}
+
+@media only screen and (max-width: 960px) {
+  .back-button { bottom: 50px; }
+
+  .error-bg {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .error-page { min-height: 410px; }
+}
+
+@media only screen and (max-width: 739px) {
+  .back-button { bottom: 30px; }
+}
+
+@media only screen and (max-width: 479px) {
+  .error-page { min-height: 480px; }
+}
+
+// 404
+
+.error-bg--404 {
+  background: url(../images/error/404.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.error-bg--500 { background: $black; }
+
+.line {
+  @include position(absolute, 50% 0 null);
+  height: 1px;
+  background: #fff;
+  margin: 3px 0 0;
+
+  .interruption {
+    @include position(absolute, 0 50% null null);
+    @include size(39px);
+    background: $black;
+    margin: 0 322px 0 0;
+  }
+
+  .cross {
+    @include position(absolute, 0 0 null);
+    @include size(15px 1px);
+    margin: 0 auto;
+
+    &:after, &:before {
+      content: "";
+      @include position(absolute, 0);
+      background: $highlight;
+      display: block;
+    }
+
+    &:after { @include transform(rotate(45deg)); }
+    &:before { @include transform(rotate(-45deg)); }
+  }
+
+  .content-block {
+    width: 445px;
+    @include position(absolute, 0);
+    background: $black;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .line {
+    top: 0;
+    bottom: 131px;
+    height: auto;
+    width: 1px;
+    margin: 0 auto;
+
+    .interruption {
+      right: -19px;
+      top: 50%;
+      margin: -100px 0 0;
+    }
+
+    .cross { top: 50%; }
+
+    .content-block {
+      width: auto;
+      top: 50%;
+      margin: -21px auto 0;
+      height: 170px;
+    }
+  }
+}
+
+@media only screen and (max-width: 739px) {
+  .line {
+    bottom: 91px;
+
+    .interruption { margin: -113px 0 0; }
+
+    .content-block {
+      margin: -44px auto 0;
+      height: 166px;
+    }
+  }
+}
+
+@media only screen and (max-width: 359px) {
+  .line {
+    .content-block { height: 186px; }
+  }
+
+  .error-caption--500 {
+    margin: 0 auto;
+    max-width: 180px;
+  }
+}

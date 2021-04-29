@@ -1,0 +1,73 @@
+/*
+ * Headings
+ */
+
+h1, .h1, h2, .h2, h3, .h3,
+h4, .h4, h5, .h5, h6, .h6 {
+  color: $santz;
+  letter-spacing: 0.240em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 24px;
+  font-weight: $extralight;
+
+  &.xl { font-size: 30px; }
+}
+
+h2, .h2 {
+  font-size: 20px;
+  font-weight: $extralight;
+}
+
+h3, .h3 {
+  font-size: 18px;
+  font-weight: $extralight;
+
+  &.xs { font-size: 16px; }
+}
+
+h4, .h4 {
+  font-size: 11px;
+  font-weight: $extrabold;
+}
+
+h5, .h5 { font-size: 11px; }
+
+h6, .h6 { font-size: 10px; }
+
+/*
+ * Paragraphs
+ */
+
+p { margin: 0; }
+
+/*
+ * Vertical Alignment
+ */
+
+.valign {
+  display: table;
+  @include size(100%);
+}
+
+.valign-cell {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.valign-content { display: inline-block; }
+
+/*
+ * Lists
+ */
+
+.list-unstyled {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

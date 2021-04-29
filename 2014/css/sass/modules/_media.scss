@@ -1,0 +1,429 @@
+// Media Queries
+
+@media only screen and (max-width: 1300px) {
+  .tilerow-03 {
+    .tilecell-boilerplate { right: 76.9%; }
+
+    .tilecell-ucda { left: 23.1%; }
+  }
+
+  .tilerow-04 {
+    padding-left: 77%;
+
+    .tilecell-jar { right: 69%; }
+
+    .tilecell-rate {
+      right: 46%;
+      left: 31%;
+    }
+
+    .tilecell-about {
+      right: 23%;
+      left: 54%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1240px) {
+  .tilerow-01 {
+    padding-left: 69%;
+
+    .tilecell-mazda { right: 54%; }
+
+    .tilecell-123seguro {
+      right: 31%;
+      left: 46%;
+    }
+  }
+
+  .tilerow-02 {
+    padding-left: 73%;
+
+    .tilecell-lautraman { right: 63.5%; }
+
+    .tilecell-mbvarq {
+      right: 27%;
+      left: 36.5%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1160px) {
+  .tilerow-01 {
+    padding-left: 69%;
+
+    .tilecell-mazda { right: 60%; }
+
+    .tilecell-123seguro {
+      right: 31%;
+      left: 40%;
+    }
+  }
+
+  .tilerow-02 {
+    padding-left: 69%;
+
+    .tilecell-lautraman { right: 65.5%; }
+
+    .tilecell-mbvarq {
+      right: 31%;
+      left: 34.5%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .tilerow-03 {
+    .tilecell-boilerplate { right: 72.4%; }
+
+    .tilecell-ucda { left: 27.5%; }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .tilerow-01 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-mazda,
+    .tilecell-123seguro,
+    .tilecell-absolutart {
+      @include position(relative, auto);
+      float: left;
+      width: 33.33333333%;
+      padding: 0 0 33.33333333%;
+      // height: 400px;
+    }
+  }
+
+  .tilerow-02 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-lautraman,
+    .tilecell-mbvarq,
+    .tilecell-aerolab {
+      @include position(relative, auto);
+      float: left;
+      width: 33.33333333%;
+      padding: 0 0 33.33333333%;
+      // height: 400px;
+    }
+  }
+
+  .tilerow-03 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-boilerplate,
+    .tilecell-ucda,
+    .tilecell-msac {
+      @include position(relative, auto);
+      float: left;
+      width: 33.33333333%;
+      padding: 0 0 33.33333333%;
+      // height: 400px;
+    }
+  }
+
+  .tilerow-04 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-jar,
+    .tilecell-rate,
+    .tilecell-about {
+      @include position(relative, auto);
+      float: left;
+      width: 33.33333333%;
+      padding: 0 0 33.33333333%;
+      // height: 400px;
+    }
+
+    .tilecell-social {
+      @include position(relative, auto);
+      float: left;
+      width: 100%;
+      padding: 0;
+      height: 200px;
+    }
+  }
+}
+
+@media only screen and (max-width: 919px) {
+  .tilerow-01 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-mazda,
+    .tilecell-123seguro,
+    .tilecell-absolutart {
+      @include position(relative, auto);
+      float: left;
+      width: 100%;
+      padding: 0 0 100%;
+      // height: 400px;
+    }
+  }
+
+  .tilerow-02 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-lautraman,
+    .tilecell-mbvarq,
+    .tilecell-aerolab {
+      @include position(relative, auto);
+      float: left;
+      width: 100%;
+      padding: 0 0 100%;
+      // height: 400px;
+    }
+  }
+
+  .tilerow-03 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-boilerplate,
+    .tilecell-ucda,
+    .tilecell-msac {
+      @include position(relative, auto);
+      float: left;
+      width: 100%;
+      padding: 0 0 100%;
+      // height: 400px;
+    }
+  }
+
+  .tilerow-04 {
+    padding-left: 0;
+
+    @include clearfix();
+
+    .tilecell-jar,
+    .tilecell-rate,
+    .tilecell-about {
+      @include position(relative, auto);
+      float: left;
+      width: 100%;
+      padding: 0 0 100%;
+      // height: 400px;
+    }
+
+    .tilecell-social {
+      @include position(relative, auto);
+      float: left;
+      width: 100%;
+      padding: 0 0 100%;
+      height: auto;
+    }
+  }
+}
+
+// -
+
+@media only screen and (max-width: 1120px) {
+  .tile-about {
+    .tile-avatar { margin-top: -45px; }
+  }
+
+  .tile-social {
+    .valign-content {
+      a { font-size: 14px; }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1120px) {
+  .tile-rate {
+    .tile-data-rate { font-size: 60px; }
+  }
+}
+
+// Home images
+
+@media only screen and (min-width: 1381px) {
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda@2x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro@2x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart@2x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman@2x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq@2x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda@2x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac@2x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar@2x.jpg); }
+}
+
+@media only screen and (max-width: 1380px) {
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda@1x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro@1x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart@1x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman@1x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq@1x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda@1x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac@1x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar@1x.jpg); }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1380px),
+       only screen and (   min--moz-device-pixel-ratio: 2) and (max-width: 1380px),
+       only screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1380px),
+       only screen and (        min-device-pixel-ratio: 2) and (max-width: 1380px),
+       only screen and (                min-resolution: 192dpi) and (max-width: 1380px),
+       only screen and (                min-resolution: 2dppx) and (max-width: 1380px) {
+
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda@2x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro@2x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart@2x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman@2x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq@2x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda@2x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac@2x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar@2x.jpg); }
+}
+
+@media only screen and (max-width: 1024px) {
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-tablet@1x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-tablet@1x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-tablet@1x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-tablet@1x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-tablet@1x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-tablet@1x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-tablet@1x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-tablet@1x.jpg); }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px),
+       only screen and (   min--moz-device-pixel-ratio: 2) and (max-width: 1024px),
+       only screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
+       only screen and (        min-device-pixel-ratio: 2) and (max-width: 1024px),
+       only screen and (                min-resolution: 192dpi) and (max-width: 1024px),
+       only screen and (                min-resolution: 2dppx) and (max-width: 1024px) {
+
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-tablet@2x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-tablet@2x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-tablet@2x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-tablet@2x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-tablet@2x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-tablet@2x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-tablet@2x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-tablet@2x.jpg); }
+}
+
+@media only screen and (max-width: 919px),
+       only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 919px),
+       only screen and (   min--moz-device-pixel-ratio: 2) and (max-width: 919px),
+       only screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 919px),
+       only screen and (        min-device-pixel-ratio: 2) and (max-width: 919px),
+       only screen and (                min-resolution: 192dpi) and (max-width: 919px),
+       only screen and (                min-resolution: 2dppx) and (max-width: 919px) {
+
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-mobile@3x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-mobile@3x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-mobile@3x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-mobile@3x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-mobile@3x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-mobile@3x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-mobile@3x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-mobile@3x.jpg); }
+}
+
+@media only screen and (max-width: 640px) {
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-mobile@2x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-mobile@2x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-mobile@2x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-mobile@2x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-mobile@2x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-mobile@2x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-mobile@2x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-mobile@2x.jpg); }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 640px),
+       only screen and (   min--moz-device-pixel-ratio: 2) and (max-width: 640px),
+       only screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 640px),
+       only screen and (        min-device-pixel-ratio: 2) and (max-width: 640px),
+       only screen and (                min-resolution: 192dpi) and (max-width: 640px),
+       only screen and (                min-resolution: 2dppx) and (max-width: 640px) {
+
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-mobile@3x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-mobile@3x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-mobile@3x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-mobile@3x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-mobile@3x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-mobile@3x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-mobile@3x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-mobile@3x.jpg); }
+}
+
+@media only screen and (max-width: 320px) {
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-mobile@1x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-mobile@1x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-mobile@1x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-mobile@1x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-mobile@1x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-mobile@1x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-mobile@1x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-mobile@1x.jpg); }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 320px),
+       only screen and (   min--moz-device-pixel-ratio: 2) and (max-width: 320px),
+       only screen and (     -o-min-device-pixel-ratio: 2/1) and (max-width: 320px),
+       only screen and (        min-device-pixel-ratio: 2) and (max-width: 320px),
+       only screen and (                min-resolution: 192dpi) and (max-width: 320px),
+       only screen and (                min-resolution: 2dppx) and (max-width: 320px) {
+
+  .tile-mazda .tile-image { background-image: url(../images/grid/mazda-mobile@2x.jpg); }
+  .tile-123seguro .tile-image { background-image: url(../images/grid/123seguro-mobile@2x.jpg); }
+  .tile-absolutart .tile-image { background-image: url(../images/grid/absolutart-mobile@2x.jpg); }
+  .tile-lautraman .tile-image { background-image: url(../images/grid/lautraman-mobile@2x.jpg); }
+  .tile-mbvarq .tile-image { background-image: url(../images/grid/mbvarq-mobile@2x.jpg); }
+  .tile-ucda .tile-image { background-image: url(../images/grid/ucda-mobile@2x.jpg); }
+  .tile-msac .tile-image { background-image: url(../images/grid/msac-mobile@2x.jpg); }
+  .tile-jar .tile-image { background-image: url(../images/grid/jar-mobile@2x.jpg); }
+}
+
+/*
+ * Other stuff!
+ */
+
+@media only screen and (max-width: 680px) {
+  .container { box-shadow: none; }
+
+  // .article-foot { max-width: none; }
+
+  .article-head {
+    > .avatar { margin-top: -91px; }
+  }
+}
+
+@media only screen and (max-width: 529px) {
+  .listing { padding: 55px 25px 56px; }
+
+  .pagination { padding: 30px 25px 30px; }
+
+  .article { padding: 0 25px; }
+
+  .article-head-color { padding: 53px 25px 58px; }
+
+  .cover {
+    &.m,
+    &.lg,
+    &.xl { height: 160px; }
+  }
+
+  // .share { left: 25px; }
+  // .fork { right: 25px; }
+}
+
+@media only screen and (max-width: 379px) {
+  .fork { display: none; }
+}

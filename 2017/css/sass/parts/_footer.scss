@@ -1,0 +1,151 @@
+// Contact
+
+.contact { padding: 113px 0 308px; }
+
+.contact-title--mobile { display: none; }
+.contact-mail--mobile { display: none; }
+.social--mobile { display: none; }
+
+.contact-head {
+  margin: 0 0 64px;
+
+  h6 { margin: 0 0 11px; }
+}
+
+.contact-mail {
+  font-size: 26px;
+  margin: 2px 0 0;
+}
+
+.agency {
+  font-style: italic;
+  // color: $gray;
+  font-size: 12px;
+  margin: 78px 0 0;
+}
+
+@media only screen and (max-width: 599px) {
+  .contact-title { display: none; }
+  .contact-title--mobile { display: block; }
+
+  .contact-mail { display: none; }
+  .contact-mail--mobile { display: block; }
+
+  .contact-head { margin: 0 0 44px; }
+
+  .contact-mail--mobile { font-size: 16px; }
+}
+
+@media only screen and (max-width: 599px) {}
+
+.social {
+  position: relative;
+  min-height: 40px;
+}
+
+.social-link {
+  display: block;
+  width: 180px;
+  min-height: 36px;
+
+  @include clearfix();
+
+  i {
+    float: left;
+    margin: 5px 0 0;
+  }
+
+  span {
+    display: block;
+    margin: 0 0 0 52px;
+    font-size: 10px;
+  }
+
+  b {
+    display: block;
+    font: $medium 18px $sansSerifFontFamily;
+    letter-spacing: 0.120em;
+    margin: 0 0 8px;
+  }
+}
+
+.social-link--dribbble { @include position(absolute, 0 null null 0); }
+.social-link--twitter { @include position(absolute, 0 0 null); margin: 0 auto; }
+.social-link--facebook { @include position(absolute, 0 0 null null); }
+
+@media only screen and (max-width: 639px) {
+  .social { display: none; }
+  .social--mobile { display: block; }
+
+  .agency { margin: 70px 0 0; }
+}
+
+@media only screen and (max-width: 599px) {
+  .agency { margin: 45px 0 0; }
+}
+
+@media only screen and (max-width: 479px) {
+  .contact {
+    padding: 26px 0 208px;
+    margin: 87px 0 0;
+  }
+}
+
+// Footer
+
+.footer {
+  padding: 0 100px 95px;
+}
+
+.footer-inner {
+  position: relative;
+  font-size: 12px;
+
+  @include clearfix();
+}
+
+.footer-name {
+  float: left;
+  position: relative;
+  text-shadow: 0 0 6px #fff, 0 0 6px #fff, 0 0 6px #fff;
+}
+
+.footer-name-signature {
+  @include position(absolute, -38px null null 0);
+  z-index: -1;
+}
+
+.footer-craft {
+  float: right;
+}
+
+.footer-up {
+  @include position(absolute, 0 0 null);
+  margin: -8px auto 0;
+
+  @include size(31px);
+  border: 1px solid $black;
+  border-radius: 50%;
+}
+
+.footer-up-arrow {
+  @include position(absolute, 50% 0 null);
+  margin: -5px auto 0;
+}
+
+@media only screen and (max-width: 960px) {
+  .footer { padding: 0 50px 45px; }
+}
+
+@media only screen and (max-width: 739px) {
+  .footer { padding: 0 30px 45px; }
+}
+
+@media only screen and (max-width: 379px) {
+  .footer-craft { display: none; }
+
+  .footer-up {
+    left: auto;
+    right: 0;
+  }
+}

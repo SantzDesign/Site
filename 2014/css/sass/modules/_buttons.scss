@@ -1,0 +1,161 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  will-change: border-color, background;
+
+  @include user-select(none);
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus { outline: 0; }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus { text-decoration: none; }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: $cursor-disabled;
+    pointer-events: none;
+  }
+
+  // Some conditionals...
+
+  .sprite { @include position(absolute, 50% null null); }
+}
+
+.btn-unstyled {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-14px {
+  font-size: 14px;
+  padding: 0 21px;
+  height: 42px;
+  line-height: 40px;
+
+  &.btn-rounded { border-radius: 21px; }
+}
+
+.btn-11px {
+  font-size: 11px;
+  padding: 7px 15px 6px 16px;
+
+  &.btn-rounded { border-radius: 21px; }
+}
+
+.btn-rounded {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.btn-18dp-icon {
+  padding-right: 42px;
+
+  .sprite {
+    margin: -8px 0 0;
+    right: 18px;
+  }
+}
+
+.btn-fff {
+  color: #fff;
+  border-color: #fff;
+
+  &:hover, &:focus { background: rgba(255, 255, 255, 0.065); }
+}
+
+.btn-lightgray {
+  color: $santzO35;
+  border-color: $lightgray;
+
+  // &:hover, &:focus {  }
+}
+
+// Square iconic buttons (68px)
+
+.btn-square {
+  display: block;
+  @include size(68px);
+  position: relative;
+
+  outline: 0;
+
+  .spr-icon-18dp, .spr-icon-24dp { @include position(absolute, 50% 0 null); }
+
+  .spr-icon-18dp { margin: -8px auto 0; }
+  .spr-icon-24dp { margin: -12px auto 0; }
+}
+
+// Circle iconic buttons (60px)
+
+.btn-circle {
+  display: block;
+  @include size(60px);
+  position: relative;
+
+  border: 1px solid $santz;
+  border-radius: 50%;
+
+  outline: 0;
+
+  @include transition(border-color 0.3s ease, background 0.3s ease);
+
+  will-change: border-color, background;
+
+  .spr-icon-18dp, .spr-icon-24dp { @include position(absolute, 50% 0 null); }
+
+  .spr-icon-18dp { margin: -8px auto 0; }
+  .spr-icon-24dp { margin: -12px auto 0; }
+}
+
+// Square menu buttons
+
+.btn-menu {
+  > span {
+    display: block;
+    @include position(absolute, 50% 0 null);
+    margin: -1px auto 0;
+    @include size(18px 2px);
+
+    @include transition(transform 0.2s $cubic-bezier, opacity 0.2s $cubic-bezier);
+
+    will-change: transform, opacity;
+  }
+
+  .dash-main { @include transform-origin(0 50%); }
+  .dash-above { @include transform(translateY(-6px)); }
+  .dash-below { @include transform(translateY(6px)); }
+
+  &:hover, &:focus {
+    .dash-main { @include transform(scale(0.83333, 1)); } // The 0.83333 value scales down the dash 3 pixels sharp, so that there's no ghost pixel
+  }
+}
+
+.btn-menu-fff > span { background: #fff; }
+.btn-menu-000 > span { background: $santz; }

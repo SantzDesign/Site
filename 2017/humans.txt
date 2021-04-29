@@ -1,0 +1,14 @@
+/*
+ * Santz
+ */
+
+Crafted by Santiago Baigorria
+Contact: santiago [at] santz.co
+Twitter: @santzdesign
+Github: SantzDesign
+Website: https://santz.co
+From: Benavídez, Argentina
+
+Language: English
+Doctype: HTML5
+IDE: Sublime Text, Photoshop, Illustrator, Git, Google PageSpeed Insights

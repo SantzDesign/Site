@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Awesome';
+  src: url('../fonts/awesome/font.eot?-nofw7j');
+  src: url('../fonts/awesome/font.eot?#iefix-nofw7j') format('embedded-opentype'),
+       url('../fonts/awesome/font.ttf?-nofw7j') format('truetype'),
+       url('../fonts/awesome/font.woff?-nofw7j') format('woff'),
+       url('../fonts/awesome/font.svg?-nofw7j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'Awesome';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-heart:before { content: "\f004"; }
+.icon-twitter:before { content: "\f099"; }
+.icon-facebook:before { content: "\f09a"; }
+.icon-linkedin:before { content: "\f0e1"; }
+.icon-github:before { content: "\f113"; }
+.icon-instagram:before { content: "\f16d"; }
+.icon-dribbble:before { content: "\f17d"; }

@@ -1,0 +1,260 @@
+/*
+ * Listing
+ */
+
+  .listing {
+    border-bottom: 1px solid $lightgray;
+    padding: 55px 90px 56px;
+
+    &:first-child { border-top: 1px solid $lightgray; }
+
+    > h2 {
+      margin: 0 0 9px;
+
+      > a { color: $santz; }
+    }
+
+    > time {
+      text-transform: uppercase;
+      font-size: 11px;
+      color: $santzO35;
+    }
+
+    > a {
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: $extrabold;
+      margin-left: 29px;
+      color: $violet;
+    }
+  }
+
+  .pagination {
+    padding: 30px 90px 30px;
+
+    .count {
+      padding: 8px 0 7px;
+      text-transform: uppercase;
+      font-size: 11px;
+      color: $santzO35;
+      float: left;
+    }
+
+    .btn-11px { float: right; }
+  }
+
+/*
+ * Covers
+ */
+
+  .cover {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &.m { height: 220px; }
+    &.lg { height: 260px; }
+    &.xl { height: 370px; }
+  }
+
+  .location {
+    display: inline-block;
+    @include position(absolute, null 17px 17px null);
+
+    i {
+      float: right;
+      opacity: 0.3;
+
+      @include transition(opacity 0.2s ease);
+
+      will-change: opacity;
+    }
+
+    span {
+      float: right;
+      padding: 6px 3px 0 0;
+      color: #fff;
+      font-size: 11px;
+      opacity: 0;
+
+      @include user-select(none);
+
+      @include transition(opacity 0.2s ease);
+
+      will-change: opacity;
+    }
+
+    &:hover {
+      cursor: help;
+
+      i, span { opacity: 1; }
+    }
+  }
+
+  .article {
+    position: relative;
+    padding: 0 90px;
+  }
+
+  .article-head {
+    padding-top: 53px;
+    margin: 0 0 34px;
+
+    > h1 { margin: 0 0 17px; }
+
+    > p, > time {
+      display: block;
+      padding: 0;
+      margin: 0;
+
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.240em;
+      color: $santzO35;
+    }
+
+    > .avatar { margin: 7px 0 22px; }
+  }
+
+  .article-head-color {
+    padding: 53px 90px 58px;
+    margin: 0 0 52px;
+
+    > h1 {
+      margin: 0 0 17px;
+      color: #fff;
+    }
+
+    > p, > time {
+      display: block;
+      padding: 0;
+      margin: 0;
+
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.240em;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    &.purple { background: $purple; }
+  }
+
+/*
+ * Article content
+ */
+
+  .article-content {
+    line-height: 1.75;
+    letter-spacing: 0.060em;
+
+    > p {
+      margin: 0 0 28px;
+      // color: $santz;
+
+      &:first-child {
+        b {
+          float: left;
+          margin: -2px 10px 0 -1px;
+
+          font-weight: $extrabold;
+          line-height: 1;
+          font-size: 56px;
+          color: $santz;
+        }
+      }
+
+      > a {
+        color: $santz;
+        font-weight: $semibold;
+      }
+
+      > strong { font-weight: $semibold; }
+    }
+
+    h2 {
+      padding-top: 33px;
+      margin: 0 0 32px;
+    }
+  }
+
+/*
+ * Article share
+ */
+
+  .article-foot {
+    // @include position(fixed, null 0 0);
+    position: relative;
+    // margin: 0 auto;
+    // max-width: 680px;
+    // min-width: 320px;
+    height: 100px;
+
+    // background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+    // background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(60%, rgba(255, 255, 255, 1)));
+    // background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+    // background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+    // background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+    // background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 60%);
+
+    // @include transform(translateZ(0));
+  }
+
+  .share {
+    @include position(absolute, null null 30px 0);
+
+    span {
+      float: left;
+      font-size: 14px;
+      color: $santz;
+      text-transform: uppercase;
+      letter-spacing: 0.240em;
+      padding: 9px 12px 0 0;
+    }
+
+    .icon-facebook,
+    .icon-twitter {
+      float: left;
+      @include size(34px);
+      border-radius: 50%;
+
+      border: 1px solid $santz;
+
+      color: $santz;
+      letter-spacing: 0;
+      font-size: 14px;
+
+      text-align: center;
+      padding-top: 9px;
+    }
+
+    .icon-twitter { margin-left: 10px; }
+  }
+
+  .fork {
+    @include position(absolute, null 0 30px null);
+
+    span {
+      float: left;
+      font-size: 14px;
+      color: $santz;
+      text-transform: uppercase;
+      letter-spacing: 0.240em;
+      padding: 9px 12px 0 0;
+    }
+
+    .icon-github {
+      float: left;
+      @include size(34px);
+
+      border-radius: 50%;
+      border: 1px solid $santz;
+
+      color: $santz;
+      letter-spacing: 0;
+      font-size: 14px;
+
+      text-align: center;
+      padding-top: 9px;
+    }
+  }

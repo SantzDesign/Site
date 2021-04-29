@@ -1,0 +1,139 @@
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+.fade {
+  opacity: 0;
+
+  @include transition(opacity 0.3s ease);
+
+  &.in { opacity: 1; }
+}
+
+// Kill the scroll on the body
+.modal-open { /* overflow: hidden; */ }
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  @include position(fixed, 68px 0 0);
+  overflow: hidden;
+  outline: 0;
+
+  z-index: 210;
+  -webkit-overflow-scrolling: touch;
+
+  will-change: opacity;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include transform(scale(0.95));
+
+    @include transition(transform 0.3s ease);
+  }
+
+  &.in .modal-dialog { @include transform(scale(1)); }
+}
+
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+
+  will-change: transform, opacity;
+}
+
+.modal-content {
+  position: relative;
+  outline: 0;
+
+  .btn-square { @include position(absolute, -68px 0 null null); }
+}
+
+// Mobile Navigation
+
+.mobile-navigation {
+  padding: 25px;
+  text-align: center;
+
+  .modal-dialog { height: 100%; }
+
+  .modal-content {
+    @include size(100%);
+    background: $santz;
+  }
+
+  nav {
+    text-transform: uppercase;
+    font-size: 14px;
+    background: $santz;
+
+    a {
+      display: block;
+      color: #fff;
+      padding: 20px 16px;
+
+      &.get-in-touch {
+        color: $violet;
+        font-weight: $extrabold;
+        padding-right: 24px;
+      }
+    }
+  }
+}
+
+.contact-modal {
+  padding: 68px 25px 0;
+
+  // .modal-dialog {}
+
+  .modal-content { background: #fff; }
+}
+
+// Modal overlay
+.modal-backdrop {
+  @include position(fixed, 68px 0 0);
+  z-index: 200;
+  background: $overlay;
+
+  will-change: opacity;
+
+  &.fade { opacity: 0; }
+
+  &.in { opacity: 1; }
+}
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+// 
+
+.mailbox {
+  padding: 90px 20px 93px;
+  text-align: center;
+
+  h1 { margin: 0 0 29px; }
+
+  a {
+    font-size: 24px;
+    font-weight: $semibold;
+  }
+}
